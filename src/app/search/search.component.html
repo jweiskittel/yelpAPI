@@ -1,0 +1,42 @@
+<h1>FoodFinder</h1>
+<h3>Don't know where to go for date night? Let FoodFinder help!</h3>
+
+<form (ngSubmit)='search()'>
+  <mat-form-field>
+    <input matInput placeholder='City' [formControl]='city'>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder='State' [formControl]='state'>
+      <mat-option *ngFor='let state of states' value={{state}}>
+        {{state}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder='Price' [formControl]='price'>
+      <mat-option value='1'>
+        $
+      </mat-option>
+      <mat-option value='2'>
+        $$
+      </mat-option>
+      <mat-option value='3'>
+        $$$
+      </mat-option>
+      <mat-option value='4'>
+        $$$$
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button>Search</button>
+</form>
+
+<div *ngIf='restaurants'>
+  <div *ngFor='let restaurant of restaurants.businesses'>
+    {{restaurant.name}}<br>
+    {{restaurant.rating}}<br>
+    {{restaurant.location.display_address[0]}}, {{restaurant.location.display_address[1]}}<br>
+    {{restaurant.display_phone}}<br>
+    <img src={{restaurant.image_url}}><br><br><br><br>
+  </div>
+</div>
