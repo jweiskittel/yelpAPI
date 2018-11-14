@@ -1,5 +1,4 @@
-<h1>FoodFinder</h1>
-<h3>Don't know where to go for date night? Let FoodFinder help!</h3>
+<h1 class='header'>FoodFinder</h1>
 
 <form (ngSubmit)='search()'>
   <mat-form-field>
@@ -27,16 +26,48 @@
         $$$$
       </mat-option>
     </mat-select>
-  </mat-form-field>
+  </mat-form-field><br>
   <button mat-raised-button>Search</button>
 </form>
 
-<div *ngIf='restaurants'>
-  <div *ngFor='let restaurant of restaurants.businesses'>
-    {{restaurant.name}}<br>
-    {{restaurant.rating}}<br>
-    {{restaurant.location.display_address[0]}}, {{restaurant.location.display_address[1]}}<br>
-    {{restaurant.display_phone}}<br>
-    <img src={{restaurant.image_url}}><br><br><br><br>
+<div *ngIf='restaurants' class='results'>
+  <div class='left'>
+    <h2 class='name'>{{restaurants.businesses[i].name}}</h2><br>
+    <h4 class='address'>{{restaurants.businesses[i].location.display_address[0]}},
+      {{restaurants.businesses[i].location.display_address[1]}}</h4><br>
+    <h4 class='phone'>{{restaurants.businesses[i].display_phone}}</h4><br>
+    <div *ngIf='rating === 0'>
+      <img src='../../assets/regular_0.png'><br><br>
+    </div>
+    <div *ngIf='rating === 1'>
+      <img src='../../assets/regular_1.png'><br><br>
+    </div>
+    <div *ngIf='rating === 1.5'>
+      <img src='../../assets/regular_1_half.png'><br><br>
+    </div>
+    <div *ngIf='rating === 2'>
+      <img src='../../assets/regular_2.png'><br><br>
+    </div>
+    <div *ngIf='rating === 2.5'>
+      <img src='../../assets/regular_2_half.png'><br><br>
+    </div>
+    <div *ngIf='rating === 3'>
+      <img src='../../assets/regular_3.png'><br><br>
+    </div>
+    <div *ngIf='rating === 3.5'>
+      <img src='../../assets/regular_3_half.png'><br><br>
+    </div>
+    <div *ngIf='rating === 4'>
+      <img src='../../assets/regular_4.png'><br><br>
+    </div>
+    <div *ngIf='rating === 4.5'>
+      <img src='../../assets/regular_4_half.png'><br><br>
+    </div>
+    <div *ngIf='rating === 5'>
+      <img src='../../assets/regular_5.png'><br><br>
+    </div>
+  </div>
+  <div class='right'>
+    <img class='image' src={{restaurants.businesses[i].image_url}}><br><br><br><br>
   </div>
 </div>
