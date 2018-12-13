@@ -15,7 +15,8 @@ mat-form-field {
 
 button {
     background: rgb(29,86,189);
-    color: white
+    color: white;
+    margin-bottom: 10px
 }
 
 .left {
@@ -50,6 +51,11 @@ img {
 .phone {
     margin: 0;
     font-size: 18px
+}
+
+label {
+    color: rgba(128, 128, 128, 0.485);
+    font-size: 14px
 }
 
 
