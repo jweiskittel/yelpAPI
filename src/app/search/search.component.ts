@@ -29,7 +29,11 @@ export class SearchComponent implements OnInit {
       this.restaurants = data
       this.i = Math.floor(Math.random()*50)
       this.rating = this.restaurants.businesses[this.i].rating
-    })
+    });
+  }
+
+  changeText() {
+    document.getElementById('search').innerHTML = 'Search Again';
   }
 
 

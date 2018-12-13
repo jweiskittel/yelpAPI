@@ -27,7 +27,7 @@
       </mat-option>
     </mat-select>
   </mat-form-field><br>
-  <button mat-raised-button>Search</button>
+  <button mat-raised-button id='search' (click)='changeText()'>Search</button>
 </form>
 
 <div *ngIf='restaurants' class='results'>
